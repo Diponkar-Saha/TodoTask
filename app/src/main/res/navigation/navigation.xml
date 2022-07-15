@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/todoListFragment">
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.diponnkar.todotask.ui.list.TodoListFragment"
+        android:label="TODO">
+        <action
+            android:id="@+id/action_todoListFragment_to_addTodoFragment"
+            app:destination="@id/addTodoFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+        <action
+            android:id="@+id/action_todoListFragment_to_editTodoFragment"
+            app:destination="@id/editTodoFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+        <action
+            android:id="@+id/action_todoListFragment_to_detailsTodoFragment"
+            app:destination="@id/detailsTodoFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/addTodoFragment"
+        android:name="com.diponnkar.todotask.ui.add.AddTodoFragment"
+        android:label="Add Todo"
+        tools:layout="@layout/fragment_add_todo">
+        <action
+            android:id="@+id/action_addTodoFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailsTodoFragment"
+        android:name="com.diponnkar.todotask.ui.details.DetailsTodoFragment"
+        android:label="fragment_details_todo"
+        tools:layout="@layout/fragment_details_todo" >
+        <action
+            android:id="@+id/action_detailsTodoFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+        <argument
+            android:name="todo"
+            app:argType="com.diponnkar.todotask.data.Todo" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTodoFragment"
+        android:name="com.diponnkar.todotask.ui.edit.EditTodoFragment"
+        android:label="fragment_edit_todo"
+        tools:layout="@layout/fragment_edit_todo" >
+        <action
+            android:id="@+id/action_editTodoFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+        <argument
+            android:name="todo"
+            app:argType="com.diponnkar.todotask.data.Todo" />
+    </fragment>
+</navigation>
