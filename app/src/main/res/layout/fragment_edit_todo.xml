@@ -32,7 +32,7 @@
         android:inputType="textPersonName"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
-        android:text="@{args.currentItem.title}"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,6 @@
         android:paddingStart="24dp"
         android:paddingTop="16dp"
         android:paddingEnd="24dp"
-        android:text="@{args.currentItem.description}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
